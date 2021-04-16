@@ -1,0 +1,32 @@
+<h1 id="tableLabel">Employees</h1>
+
+
+
+<p *ngIf="!employees"><em>Loading...</em></p>
+
+
+
+<table  style="border-collapse: collapse;"  border ='1' *ngIf="employees">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Project Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.fullName }}</td>
+      <td >
+          <tr *ngFor="let assignment of employee.assignments ">  <td >{{ assignment.projectName}} </td> </tr>
+      </td>
+      <td>
+          <tr *ngFor="let assignment of employee.assignments ">  <td>{{ assignment.startDate}} </td> </tr>
+      </td>
+      <td>
+          <tr *ngFor="let assignment of employee.assignments ">  <td>{{ assignment.endDate}} </td> </tr>
+      </td>
+    </tr>
+  </tbody>
+</table>
